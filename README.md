@@ -1,2 +1,2 @@
 # moussafir
-Une mini projet php/mysql de réservation et suivi de vol !
+Un mini projet php/mysql de suivi et réservation de vols !
