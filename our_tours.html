@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Allo Voyage</title>
+    <style>
+        .card-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			max-width: 960px;
+			margin: 0 auto;
+			
+		}
+		.card {
+          flex-basis: calc(44.44% - 20px);
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 20px;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+		.card img {
+			width: 150px;
+			height: auto;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+		.card-content {
+			padding: 20px;
+			flex: 1;
+		}
+		.card-title {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		.card-description {
+			font-size: 16px;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+		.card-status {
+			background-color: green;
+			color: #fff;
+			padding: 5px 10px;
+			border-radius: 20px;
+			font-weight: bold;
+			font-size: 14px;
+			margin-right: 10px;
+		}
+        button{
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+   <header>
+       <div class="principale">
+           <div class="logo">
+               <a href="#">travels<span>DW</span></a>
+           </div>
+       <ul>
+           <li>
+               <a href="index.html">HOME</a> 
+           </li>
+           <li>
+            <a href="hotels.html">HOTELS</a>
+        </li>
+        <li class="active">
+            <a href="our_tours.html">OUR TOURS</a>
+        </li>
+        <li>
+            <a href="destination.html">DESTINATIOM</a>
+        </li><li>
+            <a href="about_us.html">ABOUT US</a>
+        </li>
+        <li>
+            <form action="login.html" method="POST">
+                <button type="submit">Connexion</button>
+              </form>
+        </li>
+       </ul>
+    </div>
+   </header>
+   
+   <div class="card-container">
+    <div class="card">
+        <img src="images/our_tours/ourtour1.jpg" alt="Placeholder image">
+        <div class="card-content">
+            <h2 class="card-title">Omra</h2>
+            <p class="card-description">Un voyage d'Omra est un voyage religieux pour les musulmans qui souhaitent accomplir la Omra à La Mecque. Il implique généralement des vols vers l'Arabie Saoudite, des arrangements de transport terrestre et d'hébergement, ainsi qu'une assistance pour l'accomplissement des rites de la Omra. Les voyages d'Omra sont organisés par des agences de voyage agréées et peuvent varier en durée et en confort. Les voyageurs doivent s'assurer d'avoir les documents nécessaires, tels que les visas, et de suivre les règles et les normes de conduite de la Omra en Arabie Saoudite.</p>
+            <div>
+                <span class="card-status">Reverser</span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/our_tours/ourtour2.jpg" alt="Placeholder image">
+        <div class="card-content">
+            <h2 class="card-title">Europe</h2>
+            <p class="card-description">Découvrez la ville de l'amour et de la culture avec notre voyage à Paris. Admirez la Tour Eiffel, l'Arc de Triomphe et Notre-Dame, flânez dans les rues pavées, prenez une croisière romantique sur la Seine et savourez la cuisine française. Nos guides touristiques expérimentés vous accompagneront à chaque étape. Réservez dès maintenant votre voyage à Paris !</p>
+            <div>
+                <span class="card-status">Reverser</span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/our_tours/ourtour3.jpg" alt="Placeholder image">
+        <div class="card-content">
+            <h2 class="card-title">Amerique du sud</h2>
+            <p class="card-description">L'Amérique du Sud est un continent aux paysages spectaculaires et aux cultures vibrantes. Des Andes majestueuses aux forêts tropicales luxuriantes, en passant par les déserts arides et les plages de sable blanc, l'Amérique du Sud offre une grande variété de paysages naturels. Les destinations populaires incluent le Pérou pour Machu Picchu, le Brésil pour ses plages animées, l'Argentine pour le tango et le vin, et le Chili pour ses paysages naturels époustouflants. Les voyageurs peuvent profiter d'une cuisine savoureuse, d'une riche histoire culturelle et d'un accueil chaleureux en Amérique du Sud.</p>
+            <div>
+                <span class="card-status">Reverser</span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="images/our_tours/ourtour4.jpg" alt="Placeholder image">
+        <div class="card-content">
+            <h2 class="card-title">Asie</h2>
+            <p class="card-description">L'Asie est un continent aux cultures riches et diverses, avec des destinations populaires telles que le Japon, la Thaïlande, l'Inde, la Chine et l'Indonésie. Les voyageurs peuvent découvrir des temples anciens, des palais majestueux, des villes animées et des villages traditionnels. L'Asie est également connue pour sa beauté naturelle, notamment ses plages de sable blanc et ses montagnes imposantes. Les visiteurs peuvent profiter d'une cuisine savoureuse, d'une histoire fascinante et d'une expérience de voyage unique en Asie.</p>
+            <div>
+                <span class="card-status">Reverser</span>
+            </div>
+        </div>
+    </div>
+   </div>
+</body>
+</html>

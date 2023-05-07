@@ -5,40 +5,202 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Alloo Voyage</title>
+    <title>Allo Voyage</title>
+    <style>
+        /* Styles CSS */
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+       .form-row {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+
+        select {
+         flex: 1;
+        }
+    
+        .card {
+          flex-basis: calc(33.33% - 20px);
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 20px;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .card-title {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+    
+        .card-description {
+          font-size: 14px;
+          color: #666;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"]
+        {
+            width: 300px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .card img {
+          width: 100%;
+          height: auto;
+        }
+
+        select {
+            width: 160px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+    
+        .left-align {
+          background-color: #4CAF50;
+          color: white;
+          padding: 15px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        button{
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }       
+      </style>
 </head>
 <body>
+   
    <header>
-       <div class="principale">
+       <div>
            <div class="logo">
-               <a href="#">moussafi<span>R</span></a>
+               <a href="#">travels<span>DW</span></a>
            </div>
-       <ul>
-           <li class="active">
-               <a href="#">Accueil</a>
-               
-               
+
+          <nav>
+            <ul>
+              <li class="active">
+                  <a href="#">HOME</a>
+              </li>
+              <li>
+               <a href="hotels.html">HOTELS</a>
            </li>
            <li>
-            <a href="service.html">Service</a>
-        </li>
-        <li>
-            <a href="https://paradissey.blogspot.com/">Blog</a>
-        </li><li>
-            <a href="aprpoposdenous.html">A propos de nous</a>
-        </li>
-        <li>
-           
-        </li>
-       </ul>
-    </div>
-    <div class="titre">
-        <h1>ESPACE VOYAGE</h1>
-    </div>
-    <div class="bouton">
-        <a href="contact.html"class=btn>CONTACT</a>
-        <a href="reserver.html"class=btn>RESERVER</a>
-    </div>
-   </header> 
+               <a href="our_tours.html">OUR TOURS</a>
+           </li>
+           <li>
+               <a href="destination.html">DESTINATIOM</a>
+           </li><li>
+               <a href="about_us.html">ABOUT US</a>
+           </li>
+           <li>
+            <form action="login.html" method="POST">
+              <button type="submit">Connexion</button>
+            </form>
+           </li>
+          <li style="display: none;">
+            <a href="espace_client.html">MON CLIENT</a>
+          </li>
+          </ul>   
+          </nav>
+          </div>
+   </header>
+   <div class="card-container">
+    <div class="card">
+        <img src="images/tour.jpg" alt="Image de démonstration">
+      </div>
+    
+      <div class="card">
+        <p>Le site TravelsDW est un outil formidable pour tous ceux qui aiment voyager et explorer de nouveaux endroits.
+            Que vous soyez un voyageur chevronné ou que vous planifiez votre premier voyage, cette application est un excellent choix pour découvrir le monde.
+            L'application propose une variété de fonctionnalités qui permettent aux utilisateurs d'explorer de nouveaux endroits, 
+            de planifier leur voyage et de trouver des recommandations de voyage. La fonctionnalité la plus remarquable de l'application est sa carte interactive, 
+            qui permet aux utilisateurs de naviguer dans le monde entier et de découvrir des endroits intéressants à visiter.</p>            
+      </div>
+    
+      <div class="card">
+        <form>
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" required>
+        
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" required>
+
+            <label for="depart">Depart:</label>
+            <input type="date" id="depart" name="depart" required>
+        
+            <label for="return">Return:</label>
+            <input type="date" id="return" name="return" required>
+            <div class="form-row">
+              <div>
+                <label for="adults">Adults:</label>
+                <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+             
+              <div>
+                <label for="kids">Kids:</label>
+                <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            </div>
+            
+            <button type="submit" class="left-align">Search</button>
+          </form>
+      </div>
+
+      
+   </div>
+
+   
+
+   
 </body>
 </html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Allo Voyage</title>
+    <style>
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      h2 {
+        margin-top: 0;
+      }
+      
+      .form-group {
+        margin-bottom: 10px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      input {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 5px;
+        width: 100%;
+      }
+      
+      button[type="submit"] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+      }
+      
+      button[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      
+      .switch-form {
+        margin-top: 10px;
+        text-align: center;
+      }
+      
+      .switch-form a {
+        color: #007bff;
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+   <header>
+       <div class="principale">
+           <div class="logo">
+               <a href="#">travels<span>DW</span></a>
+           </div>
+       <ul>
+           <li>
+               <a href="index.html">HOME</a> 
+           </li>
+           <li>
+            <a href="hotels.html">HOTELS</a>
+        </li>
+        <li>
+            <a href="our_tours.html">OUR TOURS</a>
+        </li>
+        <li>
+            <a href="destination.html">DESTINATIOM</a>
+        </li><li>
+            <a href="about_us.html">ABOUT US</a>
+        </li>
+       </ul>
+    </div>
+   </header> 
+
+   <div class="card">
+    <form id="myForm" onsubmit="return inscription();">
+    
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="nom" id="nom" name="nom" required>
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prenom:</label>
+        <input type="prenom" id="prenom" name="prenom" required>
+      </div>
+      <div class="form-group">
+        <label for="new-username">Nom utilisateur:</label>
+        <input type="new-username" id="new-username" name="new-username" required>
+      </div>
+      <div class="form-group">
+        <label for="new-password">Mot de passe:</label>
+        <input type="password" id="new-password" name="new-password" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Adresse:</label>
+        <input type="address" id="address" name="address" required>
+      </div>
+      <div class="form-group">
+        <label for="tel">Télephone:</label>
+        <input type="tel" id="tel" name="tel" required>
+      </div>
+      <button type="submit">Valider</button>
+      <div class="switch-form">
+        <a href="#" id="login-link">Déjà un compte? Se connecter</a>
+      </div>
+    </form>
+  
+    <form style="display: none;" id="myFormConn" onsubmit="return connexion();">
+      <h2>Connexion</h2>
+      <div class="form-group">
+        <label for="username">Nom utilisateur:</label>
+        <input type="username" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" id="submit-btn">Se connecter</button>
+      <div class="switch-form">
+        <a href="#" id="create-account-link">Créer un compte</a>
+      </div>
+    </form>
+    
+    
+  </div>
+  
+  <script>
+
+     // Récupération des éléments DOM pertinents
+     //const submitBtn = document.getElementById('submit-btn');
+     const loginLink = document.querySelector('#login-link');
+     const createAccountLink = document.querySelector('#create-account-link');
+     
+      const createAccountForm = document.querySelector('form:first-of-type');
+      const loginForm = document.querySelector('form:nth-of-type(2)');
+      
+
+    // Inscription
+    function inscription() {
+  // (B1) GET FORM DATA
+    var data = new FormData(document.getElementById("myForm"));
+    const registrationForm = document.getElementById("myForm");
+ 
+    // (B2) AJAX CALL
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/register.php");
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+      alert("Inscription réussie !");
+      //registrationForm.reset();
+        createAccountForm.style.display = 'none';
+        loginLink.style.display = 'block';
+        loginForm.style.display = 'block';
+    } else {
+      alert("Erreur lors de l'inscription. Veuillez réessayer.");
+    }
+    };
+      xhr.send(data);
+      return false; 
+    }
+
+
+    // Connexion
+    function connexion () {
+    var data = new FormData(document.getElementById("myFormConn"));
+    const loginForm = document.getElementById("myFormConn");
+
+    // (B2) AJAX CALL
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/auth.php");
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        if('Invalid username or password' === xhr.responseText){
+          alert('Invalid username or password');
+          loginForm.reset();
+        }else {
+          window.location.replace("espace_client.html");
+        }
+     /// 
+    } else {
+      alert("Erreur lors de l'authentification. Veuillez réessayer.");
+    }
+    };
+      xhr.send(data);
+      return false; 
+    }
+    
+      // Cacher le formulaire d'inscription par défaut
+    //  createAccountForm.style.display = 'block';
+      
+      // Lorsque l'utilisateur clique sur le lien de connexion
+      createAccountLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        // Afficher le formulaire d'inscription et cacher le lien de connexion
+        createAccountForm.style.display = 'block';
+        loginLink.style.display = 'block';
+        loginForm.style.display = 'none';
+      });
+
+      // Lorsque l'utilisateur clique sur le lien de connexion
+      loginLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        // Afficher le formulaire d'inscription et cacher le lien de connexion
+        createAccountForm.style.display = 'none';
+        loginLink.style.display = 'block';
+        loginForm.style.display = 'block';
+      });
+      // Redirige l'utilisateur vers une autre page
+     // window.location.replace("espace_client.html");
+ // });
+  </script>
+</body>
+</html>

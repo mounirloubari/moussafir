@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Alloo Voyage</title>
+    <style>
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  width: 48%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0062cc;
+}
+
+button{
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+
+    </style>
+    
+</head>
+<body>
+   <header>
+       <div class="principale">
+           <div class="logo">
+               <a href="#">travels<span>DW</span></a>
+           </div>
+       <ul>
+           <li>
+               <a href="index.html">HOME</a>
+               
+               
+           </li>
+           <li>
+            <a href="hotels.html">HOTELS</a>
+        </li>
+        <li>
+            <a href="our_tours.html">OUR TOURS</a>
+        </li>
+        <li>
+            <a href="destination.html">DESTINATION</a>
+        </li><li class="active">
+            <a href="about_us.html">ABOUT US</a>
+        </li>
+        <li>
+            <form action="login.html" method="POST">
+                <button type="submit">Connexion</button>
+              </form>
+        </li>
+        
+       </ul>
+   </header>
+
+   <div class="card-container">  
+    <div class="card">
+      <div class="card-content">
+        <h3>Qui sommes-nous</h3>
+        <p>Le site TravelsDW est un outil formidable pour tous ceux qui aiment voyager et explorer de nouveaux endroits.
+            Que vous soyez un voyageur chevronné ou que vous planifiez votre premier voyage, cette application est un excellent choix pour découvrir le monde.
+            L'application propose une variété de fonctionnalités qui permettent aux utilisateurs d'explorer de nouveaux endroits, 
+            de planifier leur voyage et de trouver des recommandations de voyage. La fonctionnalité la plus remarquable de l'application est sa carte interactive, 
+            qui permet aux utilisateurs de naviguer dans le monde entier et de découvrir des endroits intéressants à visiter.</p>
+      </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+          <h3>Contactez-nous</h3>
+          <form>
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom">
+    
+            <label for="email">E-mail :</label>
+            <input type="email" id="email" name="email" placeholder="Votre e-mail">
+    
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" placeholder="Votre message"></textarea>
+    
+            <button type="submit" class="contact-us">Envoyer</button>
+          </form>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
