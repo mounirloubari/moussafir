@@ -113,9 +113,6 @@
         <label for="tel">Télephone :</label>
         <input type="text" id="tel" name="Télephone" placeholder="Votre télephone">
 
-        <label for="email">E-mail :</label>
-        <input type="email" id="email" name="email" placeholder="Votre e-mail">
-  
       </form>
     </div>
     <div class="card">
@@ -146,19 +143,28 @@
     </div>
   </div>
 </body>
-<script>  
-    const data = document.getElementById("registration-form");
+<script> 
+
+  const params = new URLSearchParams(window.location.search);
+  const username = params.get("username");
+
+  console.log(username)
     // (B2) AJAX CALL
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "php/espace_client.php");
+    xhr.open("GET", `php/espace_client.php?username=${username}`);
 
-    xhr.onload = function () {
+    xhr.onreadystatechange = function () {
       if (xhr.status === 200) {
-        console.log(xhr.responseText)
+        console.log(JSON.parse(xhr.responseText))
+        const client = JSON.parse(xhr.responseText);
+        document.getElementById('name').value = client.nom;
+        document.getElementById('prenom').value = client.prenom;
+        document.getElementById('adresse').value = client.adresse;
+        document.getElementById('tel').value = client.tel;
     } else {
-      alert("Erreur lors de la recuperation des information utilisateur. Veuillez réessayer.");
+      alert("Erreur lors de la recuperation des informations utilisateur. Veuillez réessayer.");
     }
     };
-      xhr.send(data);
+      xhr.send();
 </script>
 </html>

@@ -181,6 +181,9 @@
     function connexion () {
     var data = new FormData(document.getElementById("myFormConn"));
     const loginForm = document.getElementById("myFormConn");
+    const username = document.getElementById("username").value;
+
+    console.log(username);
 
     // (B2) AJAX CALL
     var xhr = new XMLHttpRequest();
@@ -192,7 +195,7 @@
           alert('Invalid username or password');
           loginForm.reset();
         }else {
-          window.location.replace("espace_client.html");
+          window.location.replace("espace_client.html?username=" + username);
         }
      /// 
     } else {
