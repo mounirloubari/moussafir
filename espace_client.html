@@ -116,25 +116,25 @@
       </form>
     </div>
     <div class="card">
-      <h2>Liste de cartes</h2>
+      <h2>Liste de voyages</h2>
       <div class="card-list">
         <div class="card-item">
           <h3>Alger => Annaba</h3>
-          <p>Description de la carte 1</p>
+          <p>Description du voyage 1</p>
           <div>
             <span class="card-status">Reversé</span>
         </div>
         </div>
         <div class="card-item">
           <h3>Alger => Paris</h3>
-          <p>Description de la carte 2</p>
+          <p>Description du voyage 2</p>
           <div>
             <span class="card-status">Reversé</span>
         </div>
         </div>
         <div class="card-item">
           <h3>Annaba => madrid</h3>
-          <p>Description de la carte 3</p>
+          <p>Description du voyage 3</p>
           <div>
             <span class="card-status">Reversé</span>
         </div>
@@ -155,7 +155,7 @@
 
     xhr.onreadystatechange = function () {
       if (xhr.status === 200) {
-        console.log(JSON.parse(xhr.responseText))
+        console.log(xhr.responseText)
         const client = JSON.parse(xhr.responseText);
         document.getElementById('name').value = client.nom;
         document.getElementById('prenom').value = client.prenom;

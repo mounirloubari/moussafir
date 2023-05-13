@@ -1,9 +1,9 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
     
-    $username = $_POST['username'];
+    $username = $_GET["username"];
 
-    var_dump($username);
+    
 
         // Connect to database
         $servername = "localhost";
